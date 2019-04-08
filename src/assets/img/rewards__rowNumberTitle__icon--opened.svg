@@ -1,0 +1,27 @@
+<svg id="グループ化_2436" data-name="グループ化 2436" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.427 21.306">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #efc723;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <rect id="長方形_1887" data-name="長方形 1887" class="cls-1" width="22.427" height="8.971" transform="translate(0 12.335)"/>
+  <g id="グループ化_2433" data-name="グループ化 2433" transform="translate(0 8.13)">
+    <path id="パス_1805" data-name="パス 1805" class="cls-2" d="M2.1,33.864,3.221,30.5H22.228l1.121,3.364Z" transform="translate(-1.511 -30.079)"/>
+    <path id="パス_1806" data-name="パス 1806" class="cls-1" d="M20.409,29.841l.841,2.523H1.177l.841-2.523h18.39M21.025,29H1.4L0,33.205H22.427L21.025,29Z" transform="translate(0 -29)"/>
+  </g>
+  <g id="グループ化_2435" data-name="グループ化 2435">
+    <g id="グループ化_2434" data-name="グループ化 2434">
+      <path id="パス_1807" data-name="パス 1807" class="cls-2" d="M2.762,8.789,1.5,5.481A4.069,4.069,0,0,1,5.565,1.5H19.021a4.069,4.069,0,0,1,4.065,3.981L21.824,8.789Z" transform="translate(-1.079 -1.079)"/>
+      <path id="パス_1808" data-name="パス 1808" class="cls-1" d="M17.942.841a3.646,3.646,0,0,1,3.644,3.5L20.465,7.289H1.99L.841,4.345A3.646,3.646,0,0,1,4.485.841H17.942m0-.841H4.485A4.5,4.5,0,0,0,0,4.485L1.4,8.13H21.025l1.4-3.644A4.5,4.5,0,0,0,17.942,0Z"/>
+    </g>
+  </g>
+  <circle id="楕円形_272" data-name="楕円形 272" class="cls-2" cx="1.177" cy="1.177" r="1.177" transform="translate(10.036 13.4)"/>
+  <rect id="長方形_1888" data-name="長方形 1888" class="cls-2" width="1.121" height="2.803" transform="translate(10.653 14.297)"/>
+  <path id="パス_1810" data-name="パス 1810" class="cls-1" d="M0,4.485A4.5,4.5,0,0,1,4.485,0H17.942a4.5,4.5,0,0,1,4.485,4.485H0Z"/>
+</svg>

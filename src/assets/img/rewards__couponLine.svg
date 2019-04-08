@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 201 1">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #ccc;
+        stroke-linecap: round;
+        stroke-dasharray: 4 4;
+      }
+    </style>
+  </defs>
+  <line id="線_173" data-name="線 173" class="cls-1" x2="200" transform="translate(0.5 0.5)"/>
+</svg>

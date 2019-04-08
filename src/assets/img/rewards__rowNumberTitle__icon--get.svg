@@ -1,0 +1,22 @@
+<svg id="グループ化_2425" data-name="グループ化 2425" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.027 18.267">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #efc723;
+      }
+
+      .cls-2 {
+        fill: #e29e22;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="パス_1804" data-name="パス 1804" class="cls-1" d="M0,0H26.027V11.411H0Z" transform="translate(0 6.856)"/>
+  <path id="パス_1797" data-name="パス 1797" class="cls-1" d="M0,5.205H0A5.221,5.221,0,0,1,5.205,0H20.821a5.221,5.221,0,0,1,5.205,5.205H0Z"/>
+  <path id="パス_1798" data-name="パス 1798" class="cls-2" d="M35.277,20.109h0A2.263,2.263,0,0,1,33,17.832V12.277A2.263,2.263,0,0,1,35.277,10h0a2.263,2.263,0,0,1,2.277,2.277v5.555A2.263,2.263,0,0,1,35.277,20.109Z" transform="translate(-22.264 -6.747)"/>
+  <circle id="楕円形_270" data-name="楕円形 270" class="cls-3" cx="1.366" cy="1.366" r="1.366" transform="translate(11.647 7)"/>
+  <rect id="長方形_1884" data-name="長方形 1884" class="cls-3" width="1.301" height="3.253" transform="translate(12.363 8.041)"/>
+</svg>

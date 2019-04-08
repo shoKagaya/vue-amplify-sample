@@ -1,0 +1,30 @@
+.c-sectionTitle {
+  color: #00ab4d;
+  font-family: $base-fontFamily-montserrat;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+
+  &::before {
+    background-color: #00ab4d;
+    content: '';
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 32%;
+  }
+
+  &::after {
+    background-color: #00ab4d;
+    content: '';
+    height: 4px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 32%;
+  }
+}

@@ -1,0 +1,99 @@
+// *************************************
+//
+//   Base
+//   -> Base-level tags (body, p, etc.)
+//
+// *************************************
+
+html {
+  font-size: 62.5%;
+  //iPhoneX safe area
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: constant(safe-area-inset-left);
+  padding-left: env(safe-area-inset-left);
+  padding-right: constant(safe-area-inset-right);
+  padding-right: env(safe-area-inset-right);
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+}
+
+body {
+  background: $base-background;
+  color: $base-color;
+  font-family: $base-fontFamily;
+  font-size: $baseFont-size;
+  line-height: $base-lineHeight;
+}
+// -------------------------------------
+//   Block Content
+// -------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+// -------------------------------------
+//   Inline Content
+// -------------------------------------
+
+a {
+  color: $base-link-color;
+  font-weight: normal;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:visited {
+    color: $base-link-color;
+    text-decoration: none;
+  }
+}
+
+img {
+  vertical-align: bottom;
+}
+
+input,
+label,
+select,
+textarea {
+  vertical-align: middle;
+}
+
+button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+select {
+  appearance: none;
+  background: none transparent;
+  border: 0;
+  border-radius: 0;
+  box-sizing: content-box;
+  color: inherit;
+  font-size: inherit;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  vertical-align: middle;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}

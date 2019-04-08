@@ -1,0 +1,102 @@
+stages:
+  - test
+  - build
+  - deploy
+
+lint:
+  image: node:10.13.0
+  stage: test
+  before_script:
+    - yarn install
+  script:
+    - yarn lint
+    - yarn stylelint
+
+test:
+  image: node:10.13.0
+  stage: test
+  script:
+    - yarn install
+    - yarn test:unit
+
+.build_template: &build_definition
+  image: node:10.13.0
+  stage: build
+  script:
+    - yarn install
+    - yarn build
+    - ls -la
+  artifacts:
+    paths:
+      - dist
+
+build_dev:
+  <<: *build_definition
+  variables:
+    VUE_APP_AWS_REGION: $DEV_VUE_APP_AWS_REGION
+    VUE_APP_AWS_API_ENDPOINT: $DEV_VUE_APP_AWS_API_ENDPOINT
+    VUE_APP_AWS_APPSYNC_API_KEY: $DEV_VUE_APP_AWS_APPSYNC_API_KEY
+    VUE_APP_S3_PATH: $DEV_VUE_APP_S3_PATH
+  only:
+    - master
+
+build_iss:
+  <<: *build_definition
+  variables:
+    VUE_APP_AWS_REGION: $ISS_VUE_APP_AWS_REGION
+    VUE_APP_AWS_API_ENDPOINT: $ISS_VUE_APP_AWS_API_ENDPOINT
+    VUE_APP_AWS_APPSYNC_API_KEY: $ISS_VUE_APP_AWS_APPSYNC_API_KEY
+    VUE_APP_S3_PATH: $ISS_VUE_APP_S3_PATH
+  only:
+    - staging
+
+build_prs:
+  <<: *build_definition
+  variables:
+    VUE_APP_AWS_REGION: $PRS_VUE_APP_AWS_REGION
+    VUE_APP_AWS_API_ENDPOINT: $PRS_VUE_APP_AWS_API_ENDPOINT
+    VUE_APP_AWS_APPSYNC_API_KEY: $PRS_VUE_APP_AWS_APPSYNC_API_KEY
+    VUE_APP_S3_PATH: $PRS_VUE_APP_S3_PATH
+  only:
+    - production
+
+.deploy_template: &deploy_definition
+  image: python:3.7
+  stage: deploy
+  before_script:
+    - pip install awscli
+  script:
+    - pip install awscli
+    - aws s3 sync ./dist/ s3://$VUE_APP_S3_BUCKET_NAME/stamp_card/
+      --exclude "*"
+      --include "*.html" --include "*.css" --include "*.png" --include "*.svg" --include "*.jpg" --include "*.js" --include "*.map"
+      --delete
+      --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
+      --exact-timestamps
+
+deploy_dev:
+  <<: *deploy_definition
+  variables:
+    AWS_ACCESS_KEY_ID: $DEV_AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: $DEV_AWS_SECRET_ACCESS_KEY
+    VUE_APP_S3_BUCKET_NAME: $DEV_VUE_APP_S3_BUCKET_NAME
+  only:
+    - master
+
+deploy_iss:
+  <<: *deploy_definition
+  variables:
+    AWS_ACCESS_KEY_ID: $ISS_AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: $ISS_AWS_SECRET_ACCESS_KEY
+    VUE_APP_S3_BUCKET_NAME: $ISS_VUE_APP_S3_BUCKET_NAME
+  only:
+    - staging
+
+deploy_prs:
+  <<: *deploy_definition
+  variables:
+    AWS_ACCESS_KEY_ID: $PRS_AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: $PRS_AWS_SECRET_ACCESS_KEY
+    VUE_APP_S3_BUCKET_NAME: $PRS_VUE_APP_S3_BUCKET_NAME
+  only:
+    - production
